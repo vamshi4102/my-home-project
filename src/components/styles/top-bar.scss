@@ -1,0 +1,15 @@
+@import "../../utils/ui/colors.scss";
+.logo{
+    height: 55px;
+}
+.nav-link{
+    text-transform: uppercase;
+}
+.top-button{
+    border: 0px;
+    outline: none;
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: $primary-color;
+    color: $text-primary;
+}

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap");
+@import "./utils/ui/colors.scss";
+* {
+  font-family: "Outfit", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  /* font-family: "Vollkorn", serif; */
+}
+
+.btn-primary {
+  background-color: $primary-color !important;
+  padding: 10px 25px !important;
+  font-size: 18px;
+  outline: none;
+  border: 0px;
+  color: $text-primary;
+  border-radius: 25px;
+  &:hover{
+    background-color: rgba($primary-color,0.5) !important;
+    transition: 0.2s ease-in-out;
+  }
+}

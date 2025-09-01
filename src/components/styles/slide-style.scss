@@ -1,0 +1,13 @@
+@import "../../utils/ui/colors.scss";
+.slide-container {
+  border: 1px solid $primary-color;
+  background-color: rgba($primary-color, 0.2);
+  padding: 0px;
+  align-items: center;
+  .body {
+    padding-left: 50px;
+    p {
+      font-size: 15px;
+    }
+  }
+}
