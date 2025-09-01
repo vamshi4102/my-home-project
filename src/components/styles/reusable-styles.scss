@@ -1,0 +1,13 @@
+@import "../../utils/ui/colors.scss";
+
+.custom-heading {
+  text-align: center;
+  h1 {
+    line-height: 50%;
+    font-family: "Vollkorn", serif;
+  }
+  p {
+    font-size: 15px;
+    color: $text-secondary;
+  }
+}

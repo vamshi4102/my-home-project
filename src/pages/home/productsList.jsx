@@ -1,9 +1,12 @@
 import React from 'react'
+import CustomHeading from '../../components/customHeading'
+import { featuresData } from '../../assets/brand'
 
 function ProductsList() {
+  const features = featuresData[0];
   return (
-    <div>
-        <h1>productsList</h1>
+    <div className='my-2'>
+        <CustomHeading title={features.title} description={features.shortDescription} />
     </div>
   )
 }

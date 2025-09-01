@@ -15,3 +15,22 @@ export const slidesContent = [
       "callToAction": "Explore Construction Guides",
     }
   ]
+
+  export const featuresData = [
+    {
+      "title": "Products",
+      "pageUrl": "/products",
+      "shortDescription": "Explore a wide range of high-quality building materials and supplies from trusted vendors."
+    },
+    {
+      "title": "Workers",
+      "pageUrl": "/workers",
+      "shortDescription": "Find skilled construction workers and professionals to bring your home-building project to life."
+    },
+    {
+      "title": "Builders",
+      "pageUrl": "/builders",
+      "shortDescription": "Connect with experienced builders and contractors for expert construction services and project management."
+    }
+  ]
+  
