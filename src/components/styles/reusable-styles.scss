@@ -11,3 +11,14 @@
     color: $text-secondary;
   }
 }
+
+.view-all-button{
+  background-color: $primary-color;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 25px;
+  color: $text-primary;
+  border: 0px;
+  outline: none;
+  align-self: center !important;
+}
