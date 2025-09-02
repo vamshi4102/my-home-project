@@ -1,12 +1,14 @@
-import React from "react";
-import Logo from "../../src/assets/images/logo.png"
-import "./styles/top-bar.scss"
-function TopBar() {
+import React, { useState } from "react";
+import Logo from "../../src/assets/images/logo.png";
+import "./styles/top-bar.scss";
+import LoginModal from "./loginModal";
+const TopBar = () => {
+  const [IsLoginOpen, setIsLoginOpen] = useState(false);
   return (
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
       <div class="container">
         <a class="navbar-brand" href="#">
-         <img src={Logo} className="logo" alt="" />
+          <img src={Logo} className="logo" alt="" />
         </a>
         <div>
           <button
@@ -32,12 +34,12 @@ function TopBar() {
                   Products
                 </a>
               </li>
-               <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="#">
                   Workers
                 </a>
               </li>
-               <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" href="#">
                   Builders
                 </a>
@@ -45,8 +47,15 @@ function TopBar() {
             </ul>
           </div>
         </div>
-        <button className="top-button">Login</button>
+        <button
+          className="top-button"
+          onClick={() => setIsLoginOpen(!IsLoginOpen)}
+        >
+          Login
+        </button>
       </div>
+      {/* login modal here */}
+      <LoginModal setIsOpen={setIsLoginOpen} IsOpen={IsLoginOpen} />
     </nav>
   );
 }
