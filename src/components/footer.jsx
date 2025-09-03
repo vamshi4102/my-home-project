@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../src/assets/images/logo.png";
 import { brandData } from "../assets/brand";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div class="container">
@@ -10,15 +11,47 @@ function Footer() {
             href="/"
             class="d-flex align-items-center mb-3 link-dark text-decoration-none"
           >
-            <img src={Logo} className="logo" alt="" style={{height:80}} />
+            <img src={Logo} className="logo" alt="" style={{ height: 80 }} />
           </a>
-          <p class="text-muted">
-            {brandData.description}
-          </p>
+          <p class="text-muted">{brandData.description}</p>
         </div>
 
         <div class="col mb-3">
-          <h5>Section</h5>
+          <h5>Pages</h5>
+          <ul class="nav flex-column">
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-muted">
+                  Home
+                </a>
+              </li>
+            </Link>
+            <Link to="/products" style={{ textDecoration: "none" }}>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-muted">
+                  Products
+                </a>
+              </li>
+            </Link>
+            <Link to="/workers" style={{ textDecoration: "none" }}>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-muted">
+                  Workers
+                </a>
+              </li>
+            </Link>
+            <Link to="/builders" style={{ textDecoration: "none" }}>
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-muted">
+                  Builders
+                </a>
+              </li>
+            </Link>
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Legal</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
@@ -27,92 +60,61 @@ function Footer() {
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                Features
+                Terms of Use
               </a>
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                Pricing
+                Privacy policy
               </a>
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                FAQs
+                Refund policy
               </a>
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                About
+                Cookie policy
               </a>
             </li>
           </ul>
         </div>
 
         <div class="col mb-3">
-          <h5>Section</h5>
+          <h5>Social Media</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                Home
+                Instagram
               </a>
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                Features
+                Facebook
               </a>
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                Pricing
+                Youtube
               </a>
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                FAQs
+                Teligram
               </a>
             </li>
             <li class="nav-item mb-2">
               <a href="#" class="nav-link p-0 text-muted">
-                About
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2">
-              <a href="#" class="nav-link p-0 text-muted">
-                Home
-              </a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#" class="nav-link p-0 text-muted">
-                Features
-              </a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#" class="nav-link p-0 text-muted">
-                Pricing
-              </a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#" class="nav-link p-0 text-muted">
-                FAQs
-              </a>
-            </li>
-            <li class="nav-item mb-2">
-              <a href="#" class="nav-link p-0 text-muted">
-                About
+                Twitter(X)
               </a>
             </li>
           </ul>
         </div>
       </footer>
-        <div className="text-center border-top py-3">
-            <p>{brandData.copyright}</p>
-        </div>
+      <div className="text-center border-top py-3">
+        <p>{brandData.copyright}</p>
+      </div>
     </div>
   );
 }
