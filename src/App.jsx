@@ -6,9 +6,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Products from "./pages/products";
 import Builders from "./pages/builders";
 import Workers from "./pages/workers";
+import { AuthProvider } from "./utils/context/AuthContext";
 function App() {
   return (
     <div>
+      <AuthProvider>
       <Router>
       <TopBar />
         <Routes>
@@ -19,6 +21,7 @@ function App() {
         </Routes>
       <Footer />
       </Router>
+      </AuthProvider>
     </div>
   );
 }

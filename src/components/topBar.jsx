@@ -3,7 +3,10 @@ import Logo from "../../src/assets/images/logo.png";
 import "./styles/top-bar.scss";
 import LoginModal from "./loginModal";
 import { Link } from "react-router-dom";
+import { useAuth } from "../utils/context/AuthContext";
+import { Button, Popover } from "antd";
 const TopBar = () => {
+  const { user, logOutAccount } = useAuth();
   const [IsLoginOpen, setIsLoginOpen] = useState(false);
   return (
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
@@ -27,28 +30,28 @@ const TopBar = () => {
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <Link to="/" style={{textDecoration:"none"}}>
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">
                     Home
                   </a>
                 </li>
               </Link>
-              <Link to="/products" style={{textDecoration:"none"}}>
+              <Link to="/products" style={{ textDecoration: "none" }}>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     Products
                   </a>
                 </li>
               </Link>
-              <Link to="/workers" style={{textDecoration:"none"}}>
+              <Link to="/workers" style={{ textDecoration: "none" }}>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     Workers
                   </a>
                 </li>
               </Link>
-              <Link to="/builders" style={{textDecoration:"none"}}>
+              <Link to="/builders" style={{ textDecoration: "none" }}>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
                     Builders
@@ -58,12 +61,32 @@ const TopBar = () => {
             </ul>
           </div>
         </div>
-        <button
-          className="top-button"
-          onClick={() => setIsLoginOpen(!IsLoginOpen)}
-        >
-          Login
-        </button>
+        {user ? (
+          <div>
+            <Popover
+              placement="bottom"
+              title={"You are Logged in"}
+              content={
+              <div>
+                <p>{user?.email}</p>
+                <hr />
+                <button className="top-button" onClick={() => logOutAccount()}>
+                  LogOut
+                </button>
+              </div>
+              }
+            >
+              <Button>{user?.email[0]}</Button>
+            </Popover>
+          </div>
+        ) : (
+          <button
+            className="top-button"
+            onClick={() => setIsLoginOpen(!IsLoginOpen)}
+          >
+            Login
+          </button>
+        )}
       </div>
       {/* login modal here */}
       <LoginModal setIsOpen={setIsLoginOpen} IsOpen={IsLoginOpen} />
