@@ -11,6 +11,7 @@ import AdminLayout from "./admin-routes";
 import AdminLogin from "../pages/admin";
 import Dashboard from "../pages/admin/dashboard";
 import AddProduct from "../pages/admin/add-product";
+import ProtectedAdmin from "./protect-admin";
 
 function WebsiteStartPoint() {
   return (
@@ -18,17 +19,31 @@ function WebsiteStartPoint() {
       <Router>
         <Routes>
           {/* user routes here */}
-          <Route element ={<UserLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/builders" element={<Builders />} />
-          <Route path="/workers" element={<Workers />} />
+          <Route element={<UserLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/builders" element={<Builders />} />
+            <Route path="/workers" element={<Workers />} />
           </Route>
           {/* admin routes here */}
-          <Route path="/admin" element ={<AdminLayout />}>
           <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin/dashboard" element={<Dashboard />} />
-          <Route path="/admin/add-product" element={<AddProduct />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route
+              path="/admin/dashboard"
+              element={
+                <ProtectedAdmin>
+                  <Dashboard />
+                </ProtectedAdmin>
+              }
+            />
+            <Route
+              path="/admin/add-product"
+              element={
+                <ProtectedAdmin>
+                  <AddProduct />
+                </ProtectedAdmin>
+              }
+            />
           </Route>
         </Routes>
       </Router>
