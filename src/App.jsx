@@ -1,12 +1,16 @@
 import React from "react";
 import { AuthProvider } from "./utils/context/AuthContext";
 import WebsiteStartPoint from "./navigation";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 function App() {
   return (
     <>
-      <AuthProvider>
-      <WebsiteStartPoint />
-      </AuthProvider>
+      <Provider store={store}>
+        <AuthProvider>
+          <WebsiteStartPoint />
+        </AuthProvider>
+      </Provider>
     </>
   );
 }

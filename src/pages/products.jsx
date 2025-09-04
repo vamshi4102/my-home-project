@@ -4,7 +4,7 @@ import ProductsList from './home/productsList'
 function Products() {
   return (
     <div>
-      <ProductsList />
+      <ProductsList page="products" />
     </div>
   )
 }
